@@ -1,0 +1,230 @@
+Learning Journey 
+----------------------
+
+Sprint 1 & 2 (Week 1&2)
+-----------------------
+
+Core Java
+----------
+JVM, JDK, JRE
+
+
+OOPS
+----------
+Class & object
+
+encapsulation
+------------------
+Hiding of objects. To prevent unwanted mutation of your class properties.
+
+Private and Public.
+
+Bean or Model class.
+
+abstraction
+-----------------
+
+Dao design pattern --> Data Access Object design pattern
+
+
+inheritance & interface
+--------------------
+
+
+polymorphism
+------------------
+
+Static --> method overloading
+Dynamic --> method overriding / late binding (Inheritance)
+
+Collections
+---------------------
+It is a pre-defined group of interfaces and classes that makes efficient implementation of data structures
+for in-memory data storage and data operation.
+
+
+Map
+-------
+Collection of key-value pairs
+
+Exception
+--------------
+Checked
+Unchecked
+
+
+
+String-StringBuilder-StringBuffer
+-------------------------------------------
+
+String x= "Hello"; // literals
+
+String y = "Hello";
+
+String obj = new String("Hello"); // instatiation
+
+
+
+
+
+Async processes in Java (multi-thread)
+------------------------------------------
+
+Serialization and Deserialisation
+---------------------------------------
+
+serialization --> converting object intro byte streams of data
+
+deserialization --> converting byte streams of data into objects
+
+
+
+
+class myClass extends Serialize
+
+ObjectInputStream
+------------------------------------------------------
+
+Java 8 Discussion
+-------------------------
+Lambda with funtional interface
+
+-> lambda expression. it shortens the code, works like a functions, can be anonymous and works nicely with functional interfaces.
+
+
+
+Pre-defined functional interfaces [Predicate, Function, Consumer, Supplier]
+Static method ref and instance method ref
+New DateTime package
+Stream API
+
+
+Case Study will be released at the beginning of week 2.
+
+
+
+Goal - To clear the MCQ/coding exam of Core Java
+
+
+
+Sprint 3 & 4 (Week 3 & 4)
+-----------------------
+
+Spring Backend
+--------------------
+
+Goal- To develop the complete backend and test it on unit level as per the given case study.
+Springboot microservice, jwt, swagger, postman, API consumption using RestTemplate,
+Spring Test using junit +mockito, spring boot with mongo, Kafka, ELK, Prom/ Gra in Docker
+
+
+Sprint 5 & 6 (Week 5 & 6)
+-----------------------
+
+Goal- To develop the appropriate front-end UI and test it on unit level as per the given case study.
+
+Angular
+----------
+Angular was initially called as AngularJS. Because it was JS framework for front-end development. However we have moved ahead and created a superset of JS, called Typescript.  Typescript and JS will have all same features, except that typescript supports Data types like numeric, string and boolean.
+
+But Nodejs will execute only js file. So every .ts file is transpilled into .js file by tsc- , i.e. typescript compiler.
+
+Nodejs is created on top of a popular JS engine of chrome browser called Engine V8.
+
+1. Typescript
+2. Angular components
+3. Data binding
+---------------------------
+a.Interpolation / One-way 
+b. two-way
+
+4. Built-in directives
+5. JSON-Server CRUD /any DB server CRUD:
+	HttpClient
+	Observable with subscribe
+	Form (Template driven Form/ Reactive Form)
+6. Pipes
+7. Lifecycle hooks
+8. Routing with CanActivate guard
+9. Material
+
+
+Sprint 7 & 8 (Week 7 & 8)
+-----------------------
+
+Goal-To complete AWS cloud deployment of our backend and Front-end hosting in AWS S3.
+
+
+Sprint 9 & 10 (Week 9 & 10)
+----------------------------
+
+Goal- To complete the submission, presentation and viva voce on our project.
+
+
+	Lambda pom.xml
+-------------------------------
+<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-function-adapter-aws -->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-function-adapter-aws</artifactId>
+    <version>3.2.7</version>
+</dependency>
+		<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-lambda-java-events -->
+<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-lambda-java-events</artifactId>
+    <version>3.11.0</version>
+</dependency>
+		<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-lambda-java-core -->
+<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-lambda-java-core</artifactId>
+    <version>1.2.1</version>
+</dependency>
+		
+	</dependencies>
+
+	
+<build>
+<plugins>
+<plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <version>1.2.7.RELEASE</version>
+     
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot.experimental</groupId>
+        <artifactId>spring-boot-thin-layout</artifactId>
+        <version>1.0.26.RELEASE</version>
+    </dependency>
+</dependencies>
+<configuration>
+    <createDependencyReducedPom>false</createDependencyReducedPom>
+    <shadedArtifactAttached>true</shadedArtifactAttached>
+    <shadedClassifierName>aws</shadedClassifierName>
+    <transformers>
+        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+            <resource>META-INF/spring.handlers</resource>
+        </transformer>
+        <transformer implementation="org.springframework.boot.maven.PropertiesMergingResourceTransformer">
+            <resource>META-INF/spring.factories</resource>
+        </transformer>
+        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+            <resource>META-INF/spring.schemas</resource>
+        </transformer>
+    </transformers>
+</configuration>
+</plugin>
+           </plugins>
+       
+<finalName>springbootlambda</finalName>
+</build>
+
+</project>
+
+
+
+
+
+
